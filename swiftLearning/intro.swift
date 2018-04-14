@@ -56,3 +56,53 @@ agesVar["Justyn"] = 67 // adds a new value for "Justyn"
 agesVar["Justyn"] = 68 // Changes the value for "Justyn"
 
 print(agesVar)
+
+let possibleAge: Int? = ages["Amy"]
+
+if possibleAge == nil {
+  print("Age not found.")
+}else{
+  print(possibleAge!)
+}
+
+print("\n")
+
+let a = 40
+
+switch a {
+case 1:
+  print("Happy first birthday!")
+case 13...19:
+  print("happy ...")
+case let decade where decade % 10 == 0:
+  print("significant",decade)
+default:
+  print("Default case")
+}
+
+print("\n")
+
+let userName = "admin"
+let passwordIsValid = true
+switch(userName, passwordIsValid){
+case ("admin", true):
+  print("GOOD! Welcome back!")
+case ("guest",_):
+  print("Guests are not allowed in this restricts")
+default:
+  print("Sorry, password not is valid!")
+
+}
+
+
+// Functions
+
+func sendMessage(_ message: String, to recipient: String,shouting: Bool) {
+  var message = "\(message) \(recipient)"
+  if shouting {
+    message = message.uppercased()
+  }
+  print(message)
+
+}
+sendMessage("See you  at the Bash",to: "Morgan",shouting: true)
